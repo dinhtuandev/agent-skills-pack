@@ -1,44 +1,38 @@
-# scripts/ — kiểm tra pack (offline)
+# scripts/ — offline pack checks
 
-Hai script chạy được **không cần mạng, không cần `claude` CLI** — bù cho phần
-v3 vốn chỉ rà soát bằng tay (xem `../EVAL-REPORT.md`).
+Two scripts that run **without network and without the `claude` CLI** — the repeatable replacement for the manual audit described in `../EVAL-REPORT.md`.
 
-| Script | Trả lời câu hỏi | Exit code |
+| Script | Answers | Exit code |
 |---|---|---|
-| `validate_skills.py` | "Cấu trúc skill còn đúng chuẩn không?" | 1 nếu có lỗi |
-| `score_triggers.py` | "Sau khi sửa description, trigger có bị lệch không?" | luôn 0 |
+| `validate_skills.py` | "Is the skill structure still correct?" | 1 on error |
+| `score_triggers.py` | "Did a description edit shift the triggering?" | always 0 |
 
-## Chạy
+## Run
 
-Từ gốc pack:
+From the pack root:
 
 ```bash
-python scripts/validate_skills.py            # cả 15 skill
-python scripts/validate_skills.py write-prd  # 1 skill
-python scripts/score_triggers.py             # điểm baseline + confusion
-python scripts/score_triggers.py --verbose   # in từng ca dự đoán sai
+python scripts/validate_skills.py            # all 15 skills
+python scripts/validate_skills.py write-prd  # one skill
+python scripts/score_triggers.py             # baseline + confusion
+python scripts/score_triggers.py --verbose   # print every misprediction
 ```
 
-Không cần cài thêm gì — thuần thư viện chuẩn Python 3.9+.
+Nothing to install — standard library only, Python 3.9+.
 
-## validate_skills.py kiểm gì
+## What validate_skills.py checks
 
-Lỗi (làm fail):
-- thiếu `SKILL.md`, hoặc không mở đầu bằng frontmatter `---`
-- thiếu `name` / `description`
-- `name` không phải kebab-case, hoặc khác tên thư mục
-- `description` dài quá 1024 ký tự (giới hạn Claude Code)
-- body trỏ tới `references/...`, `scripts/...`, `assets/...` không tồn tại
-- thiếu `evals/trigger-eval.json`, sai schema, hoặc thiếu hẳn nhánh
-  `should_trigger` true / false
+Errors (non-zero exit):
+- missing `SKILL.md`, or a file that does not open with `---` frontmatter
+- missing `name` / `description`
+- `name` not kebab-case, or not matching the folder name
+- `description` longer than 1024 characters (the Claude Code limit)
+- the body references a `references/...`, `scripts/...` or `assets/...` path that does not exist
+- missing `evals/trigger-eval.json`, invalid schema, or no `should_trigger` true/false cases
 
-Cảnh báo (không fail): description ngắn dưới 120 ký tự, không có cụm trigger
-("use when / wants / asks / says..."), body mỏng, thư mục rỗng, và **skill có
-`references/*-template.md` nhưng thiếu `evals/output-eval.md`** (tức chưa có
-tiêu chí chấm chất lượng output).
+Warnings (do not fail): description shorter than 120 characters, no explicit trigger cue ("use when / wants / asks / says..."), thin body, empty folder, and a skill that ships `references/*-template.md` but has no `evals/output-eval.md` — that last one means the skill's output quality is unverified.
 
-Kiểm ngược để tin script: tạo tạm một thư mục skill trỏ tới file không tồn tại
-rồi chạy — phải exit 1:
+To convince yourself the script works, point a throwaway skill folder at a file that does not exist — it must exit 1:
 
 ```bash
 mkdir -p _tmp/references
@@ -48,29 +42,18 @@ printf '%s\n' \
   'description: A deliberately long enough description for the validator to accept this as a real skill description string here.' \
   '---' '' \
   'See `references/khong-ton-tai.md` for the missing thing.' > _tmp/SKILL.md
-python scripts/validate_skills.py _tmp; echo "exit=$?"   # kỳ vọng exit=1
+python scripts/validate_skills.py _tmp; echo "exit=$?"   # expect exit=1
 rm -rf _tmp
 ```
 
-## score_triggers.py đo gì
+## What score_triggers.py measures
 
-Với **mỗi query trong mọi file eval**, nó chấm điểm query đó với **cả 15
-description cùng lúc** bằng BM25, lấy description điểm cao nhất, rồi so với
-skill được kỳ vọng. Kết quả: độ chính xác tổng, recall theo từng skill, và
-bảng "confusion" (skill nào cướp query của skill nào).
+For **every query in every eval file**, it scores that query against **all 15 descriptions at once** with BM25, takes the top-scoring description, and compares it with the expected skill. Output: overall accuracy, per-skill recall, and a confusion table (which skill stole which query).
 
-Đây là **baseline từ vựng**, không phải model thật. Giá trị của nó là tính
-**lặp lại được**: sửa một description, chạy lại, nếu điểm tụt hoặc xuất hiện
-confusion mới → hai description vừa đụng nhau. Đó chính là loại lỗi v3 phải
-phát hiện bằng mắt.
+This is a **lexical baseline**, not the real model. Its value is that it is **repeatable**: edit a description, run it again, and if accuracy drops or a new confusion appears, two descriptions have started colliding — exactly the class of bug the v3 audit had to find by eye.
 
-## Giới hạn (đọc trước khi tin số)
+## Limits (read before trusting the numbers)
 
-- Cả hai script chỉ đọc file trên đĩa — không chứng minh Claude Code sẽ load
-  đúng, chỉ chứng minh file đúng chuẩn và description không đụng nhau về mặt
-  từ vựng.
-- Vòng benchmark thật (đo variance, train/test split, model khác chấm) vẫn cần
-  `claude -p` trong Claude Code — lệnh có trong `../EVAL-REPORT.md`.
-- Các script này chưa được chạy trong phiên tạo ra chúng (sandbox shell của môi
-  trường soạn thảo không khởi động được). Lần đầu bạn chạy, hãy đọc kỹ output
-  thay vì coi là đã xanh.
+- Both scripts only read files on disk. They do not prove any Agent Skills client will load the skills correctly — only that the files follow the format and that the descriptions do not collide lexically.
+- The real benchmark loop (variance, train/test split, scoring with a different model) still needs `claude -p` inside Claude Code — commands in `../EVAL-REPORT.md`.
+- Both scripts were run when this pack was released (2026-10-02): `validate_skills.py` → `15 skill(s): 0 error(s), 0 warning(s)`; `score_triggers.py` → 83.3% (155/186). CI re-runs them on every push.
