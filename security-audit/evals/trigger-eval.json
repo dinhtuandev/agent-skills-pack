@@ -1,0 +1,15 @@
+[
+  {"query": "audit this codebase for security gaps before we ship to production", "should_trigger": true},
+  {"query": "find security issues in our auth flow — I want file:line references, not generic advice", "should_trigger": true},
+  {"query": "do an IDOR sweep across our API endpoints, users keep changing IDs in requests", "should_trigger": true},
+  {"query": "can u go through our repo like an attacker would and tell me what you'd exploit", "should_trigger": true},
+  {"query": "check for secrets committed to git history, not just the current files", "should_trigger": true},
+  {"query": "we're about to launch payments, find anything that could get us breached", "should_trigger": true},
+  {"query": "users can see other people's orders by changing the id in the url, is that a security issue we need to sweep for elsewhere too", "should_trigger": true},
+  {"query": "why is this endpoint throwing a 500 error in prod but not staging", "should_trigger": false},
+  {"query": "clean up unused code and dependencies in this repo", "should_trigger": false},
+  {"query": "what are common types of SQL injection attacks, just curious", "should_trigger": false},
+  {"query": "set up hooks so Claude can't touch our .env file", "should_trigger": false},
+  {"query": "write tests that check our login form handles bad input correctly", "should_trigger": false},
+  {"query": "review this PR for code quality issues before merge", "should_trigger": false}
+]

@@ -1,0 +1,14 @@
+[
+  {"query": "wire up an MCP server for our internal Jira instance so Claude Code can create tickets", "should_trigger": true},
+  {"query": "I want to connect Claude Code to Stripe via MCP, what tools do I actually need", "should_trigger": true},
+  {"query": "scaffold an MCP server for our internal analytics API, we don't have anything for it yet", "should_trigger": true},
+  {"query": "can u set up mcp tools for our postgres read replica so claude can query it directly", "should_trigger": true},
+  {"query": "add MCP integration for Slack so Claude Code can post messages", "should_trigger": true},
+  {"query": "is there an existing MCP server for Linear, and if so set it up for this project", "should_trigger": true},
+  {"query": "build a FastMCP server with 6 tools for our internal billing API, full auth and error handling", "should_trigger": true},
+  {"query": "connect our app to a postgres database, set up the schema", "should_trigger": false},
+  {"query": "what is the Model Context Protocol", "should_trigger": false},
+  {"query": "how do I call the Stripe REST API directly from my node backend, no MCP involved", "should_trigger": false},
+  {"query": "audit our MCP server code for security issues before we expose it externally", "should_trigger": false},
+  {"query": "write the PRD for our new integrations feature", "should_trigger": false}
+]

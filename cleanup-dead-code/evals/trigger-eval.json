@@ -1,0 +1,14 @@
+[
+  {"query": "find and remove dead code in this repo, we've had a lot of churn", "should_trigger": true},
+  {"query": "prune unused exports and dependencies from package.json", "should_trigger": true},
+  {"query": "there's commented-out code everywhere from old experiments, clean it up safely", "should_trigger": true},
+  {"query": "can u find stuff nothing imports anymore and get rid of it, just be careful", "should_trigger": true},
+  {"query": "we have stale feature flags that have been permanently on for a year, find and remove them", "should_trigger": true},
+  {"query": "audit for dead CSS classes and unused assets in the frontend", "should_trigger": true},
+  {"query": "audit this for security gaps", "should_trigger": false},
+  {"query": "debug why this component re-renders infinitely", "should_trigger": false},
+  {"query": "refactor this messy function to be more readable, keep the logic the same", "should_trigger": false},
+  {"query": "what's dead code elimination in webpack, just explain the concept", "should_trigger": false},
+  {"query": "the build is failing after the last deploy", "should_trigger": false},
+  {"query": "write the PRD for a code-quality dashboard feature", "should_trigger": false}
+]

@@ -1,0 +1,14 @@
+[
+  {"query": "scan this repo and generate a CLAUDE.md for it", "should_trigger": true},
+  {"query": "set up project instructions so future Claude Code sessions know our conventions", "should_trigger": true},
+  {"query": "onboard Claude to this codebase — leave yourself notes on how we do things here", "should_trigger": true},
+  {"query": "can u look through the repo and write yourself a memory file, we keep re-explaining the same stuff", "should_trigger": true},
+  {"query": "refresh our CLAUDE.md, it's out of date since we migrated to TypeScript", "should_trigger": true},
+  {"query": "document our error handling conventions and hard rules for Claude in CLAUDE.md", "should_trigger": true},
+  {"query": "write the PRD for our onboarding feature", "should_trigger": false},
+  {"query": "audit this repo for security issues", "should_trigger": false},
+  {"query": "what should go in a README vs CLAUDE.md, just curious", "should_trigger": false},
+  {"query": "clean up dead code in this repo", "should_trigger": false},
+  {"query": "turn this workflow into a reusable skill", "should_trigger": false},
+  {"query": "plan out a big refactor before touching anything", "should_trigger": false}
+]

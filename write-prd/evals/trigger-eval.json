@@ -1,0 +1,16 @@
+[
+  {"query": "write the PRD for the new referral program feature", "should_trigger": true},
+  {"query": "we're adding a 'saved searches' feature to the app, can you spec it out for me at the product level before I brief the design team", "should_trigger": true},
+  {"query": "boss wants a one-pager on the multi-currency checkout feature, something the eng team can start from — can you draft that up", "should_trigger": true},
+  {"query": "hey can you turn this rough idea into a proper feature doc: users should be able to export their data as CSV, we don't have a v1 scope yet", "should_trigger": true},
+  {"query": "I need a PRD for our new API rate limiting tiers before I loop in engineering, save it wherever these docs usually go", "should_trigger": true},
+  {"query": "draft the requirements doc for the 'invite teammates' flow — needs user stories and what's explicitly out of scope for v1", "should_trigger": true},
+  {"query": "ok before anyone touches code on the loyalty points thing, can u write up what we're actually building and why", "should_trigger": true},
+  {"query": "write a given/when/then spec for the loyalty points redemption flow", "should_trigger": false},
+  {"query": "we already have the PRD at docs/prd-loyalty-points.md, now write the api contract and error shapes for it", "should_trigger": false},
+  {"query": "give me a UI brief for the loyalty points redemption screen — states, spacing, tokens", "should_trigger": false},
+  {"query": "the PRD for loyalty points is approved, break it into a numbered build sequence", "should_trigger": false},
+  {"query": "what should I eat for lunch", "should_trigger": false},
+  {"query": "review this PRD I already wrote for typos and clarity issues", "should_trigger": false},
+  {"query": "can you scan our repo and write me a CLAUDE.md", "should_trigger": false}
+]

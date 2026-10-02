@@ -1,0 +1,14 @@
+[
+  {"query": "wire up postgres for this project, we need users and orders tables with proper indexes", "should_trigger": true},
+  {"query": "set up row-level security since this is multi-tenant, and give me the migration", "should_trigger": true},
+  {"query": "design the schema for a multi-tenant SaaS billing system and write the migrations", "should_trigger": true},
+  {"query": "yo can u connect this app to a database, we're using supabase, need the client setup and some tables", "should_trigger": true},
+  {"query": "add a typed query layer for our existing postgres tables, right now queries are scattered everywhere", "should_trigger": true},
+  {"query": "we need connection pooling for our serverless deployment on Vercel, set that up", "should_trigger": true},
+  {"query": "wire up an MCP server so Claude can query our database directly", "should_trigger": false},
+  {"query": "the schema's already designed, now give me a build sequence to implement the whole billing feature", "should_trigger": false},
+  {"query": "audit our database queries for SQL injection", "should_trigger": false},
+  {"query": "what's the difference between postgres and mongodb", "should_trigger": false},
+  {"query": "clean up the dead migration files nobody references anymore", "should_trigger": false},
+  {"query": "debug why this query is returning duplicate rows in prod", "should_trigger": false}
+]

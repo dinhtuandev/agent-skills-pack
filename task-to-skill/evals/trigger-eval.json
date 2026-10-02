@@ -1,0 +1,14 @@
+[
+  {"query": "turn this into a skill so future sessions handle it the same way", "should_trigger": true},
+  {"query": "I keep doing this deployment checklist by hand, make it a reusable skill", "should_trigger": true},
+  {"query": "make this workflow repeatable — capture what we just did as a Claude Code skill", "should_trigger": true},
+  {"query": "can u save this as a skill so I don't have to re-explain it every time", "should_trigger": true},
+  {"query": "we just did a multi-step release process together, turn that into .claude/skills", "should_trigger": true},
+  {"query": "capture our onboarding-review process as a skill, I do it every time we hire someone", "should_trigger": true},
+  {"query": "create a new skill from scratch and help me test it properly with real eval cases", "should_trigger": false},
+  {"query": "scan this repo and write me a CLAUDE.md", "should_trigger": false},
+  {"query": "what is a Claude Code skill, how is it different from a slash command", "should_trigger": false},
+  {"query": "improve the description of this existing skill so it triggers more reliably", "should_trigger": false},
+  {"query": "write the PRD for our internal tools roadmap", "should_trigger": false},
+  {"query": "set up hooks as guardrails for this project", "should_trigger": false}
+]

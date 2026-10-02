@@ -1,0 +1,15 @@
+[
+  {"query": "write Playwright tests for the signup flow", "should_trigger": true},
+  {"query": "we need E2E coverage before this release, prioritize checkout", "should_trigger": true},
+  {"query": "verify the login flow works end to end, include what happens with bad credentials", "should_trigger": true},
+  {"query": "can u write browser tests for our core actions, we have zero test coverage rn and I'm nervous", "should_trigger": true},
+  {"query": "add CI test coverage for the password reset flow using our existing github actions setup", "should_trigger": true},
+  {"query": "the signup test is flaky, can you also add a proper unhappy-path test while you're at it", "should_trigger": true},
+  {"query": "write the given/when/then test cases for the login flow so QA can run them", "should_trigger": true},
+  {"query": "the signup test is failing intermittently, debug why", "should_trigger": false},
+  {"query": "write the given/when/then spec for signup before we build it, nothing exists yet", "should_trigger": false},
+  {"query": "what testing framework should we use for a new React project", "should_trigger": false},
+  {"query": "add a unit test for this date-formatting utility function", "should_trigger": false},
+  {"query": "audit our signup flow for security issues", "should_trigger": false},
+  {"query": "clean up the old cypress tests nobody runs anymore", "should_trigger": false}
+]

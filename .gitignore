@@ -1,0 +1,9 @@
+# agent tooling workspace
+.orthex/
+
+# python
+__pycache__/
+*.pyc
+
+# scratch / throwaway
+_tmp/

@@ -1,0 +1,14 @@
+[
+  {"query": "commit these changes properly, I have a bunch of unrelated edits staged", "should_trigger": true},
+  {"query": "clean up these commits before I push", "should_trigger": true},
+  {"query": "write a commit message for this diff following conventional commits", "should_trigger": true},
+  {"query": "can u split what I've got staged into proper commits, it's a mess rn", "should_trigger": true},
+  {"query": "help me write a good commit message, ticket is PROJ-482", "should_trigger": true},
+  {"query": "check the staged diff and make sure I'm not about to commit secrets", "should_trigger": true},
+  {"query": "set up a pre-commit hook that runs lint with husky before every commit", "should_trigger": false},
+  {"query": "write the PRD for our git workflow tooling feature", "should_trigger": false},
+  {"query": "what's the difference between merge and rebase", "should_trigger": false},
+  {"query": "revert the last commit, I broke something", "should_trigger": false},
+  {"query": "audit our repo for committed secrets across the whole git history", "should_trigger": false},
+  {"query": "debug why our CI fails after this commit", "should_trigger": false}
+]

@@ -1,0 +1,14 @@
+[
+  {"query": "getting 'TypeError: cannot read property of undefined' on the checkout page, works locally but not in prod", "should_trigger": true},
+  {"query": "this works in staging but breaks in prod after deploy, here's the stack trace", "should_trigger": true},
+  {"query": "users report the app crashes when they upload large files, no idea why", "should_trigger": true},
+  {"query": "wtf is going on, this function throws null sometimes but not always, help me actually figure out why not just patch it", "should_trigger": true},
+  {"query": "API returns 200 but the response body is empty half the time, need root cause not a band-aid", "should_trigger": true},
+  {"query": "reproduce and fix this bug: clicking submit twice creates duplicate orders", "should_trigger": true},
+  {"query": "audit our code for security vulnerabilities", "should_trigger": false},
+  {"query": "find and remove dead code in this repo", "should_trigger": false},
+  {"query": "why do we use zustand instead of redux in this project", "should_trigger": false},
+  {"query": "write a regression test for the login flow", "should_trigger": false},
+  {"query": "explain what a stack trace is", "should_trigger": false},
+  {"query": "plan out how we'd refactor this before touching anything", "should_trigger": false}
+]

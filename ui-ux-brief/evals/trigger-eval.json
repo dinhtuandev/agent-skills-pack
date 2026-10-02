@@ -1,0 +1,14 @@
+[
+  {"query": "give me a full UI/UX brief for the onboarding flow before the design team touches Figma", "should_trigger": true},
+  {"query": "I need component states, spacing, and accessibility notes documented for the settings screen", "should_trigger": true},
+  {"query": "think through the design of the 'invite teammates' modal with me — typography tokens, motion, all states", "should_trigger": true},
+  {"query": "write up layout, breakpoints and a11y notes for the pricing page redesign", "should_trigger": true},
+  {"query": "before eng builds this can u put together the full design brief — like states for empty/error/loading and all that — for the notifications inbox", "should_trigger": true},
+  {"query": "we're inspired by Linear and Stripe's onboarding, write a UI brief for our own onboarding flow informed by their patterns but not copying them", "should_trigger": true},
+  {"query": "build me a React dropdown component", "should_trigger": false},
+  {"query": "write the PRD for the onboarding flow", "should_trigger": false},
+  {"query": "critique this Figma mockup I'm sharing, is the hierarchy clear", "should_trigger": false},
+  {"query": "what accessibility standard should government websites follow", "should_trigger": false},
+  {"query": "spec out the API contract for the onboarding flow", "should_trigger": false},
+  {"query": "mock up the settings screen so I can see what it looks like", "should_trigger": false}
+]

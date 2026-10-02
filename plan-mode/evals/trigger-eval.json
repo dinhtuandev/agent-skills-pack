@@ -1,0 +1,14 @@
+[
+  {"query": "ultra plan mode: I want to refactor how we handle auth sessions, this touches like 15 files", "should_trigger": true},
+  {"query": "before you touch anything, plan mode — I need to migrate our payments provider and I'm nervous about it", "should_trigger": true},
+  {"query": "plan this out first, don't write any code yet: we're moving from REST to GraphQL for the user API", "should_trigger": true},
+  {"query": "can we go into plan mode for this, it's prod data and I really don't wanna break anything", "should_trigger": true},
+  {"query": "this task touches auth and I don't have a clear idea of scope yet — read everything first and propose approaches before doing anything", "should_trigger": true},
+  {"query": "I want 2-3 real options with tradeoffs for restructuring our database schema, no edits yet", "should_trigger": true},
+  {"query": "the spec for the payments migration is approved, now give me the implementation plan", "should_trigger": false},
+  {"query": "just fix this bug, don't overthink it", "should_trigger": false},
+  {"query": "explain how plan mode works in general terms", "should_trigger": false},
+  {"query": "write the spec for the auth refactor", "should_trigger": false},
+  {"query": "review our auth code for security vulnerabilities", "should_trigger": false},
+  {"query": "commit these changes properly", "should_trigger": false}
+]

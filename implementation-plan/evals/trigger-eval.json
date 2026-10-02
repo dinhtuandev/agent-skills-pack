@@ -1,0 +1,14 @@
+[
+  {"query": "the spec for checkout is approved at docs/spec-checkout.md, give me a step-by-step build sequence", "should_trigger": true},
+  {"query": "turn the referral program PRD into an implementation plan, small verifiable steps please", "should_trigger": true},
+  {"query": "break this down into a numbered sequence I can execute one step at a time, riskiest unknowns first", "should_trigger": true},
+  {"query": "ok spec's locked, what order do we actually build this in without breaking the app at any point", "should_trigger": true},
+  {"query": "give me S/M/L sized steps to implement the CSV export feature from the approved doc", "should_trigger": true},
+  {"query": "what's the build sequence for the notifications settings page now that the spec's done", "should_trigger": true},
+  {"query": "plan mode: help me think through refactoring the auth module, nothing's approved yet", "should_trigger": false},
+  {"query": "write the spec for the CSV export feature", "should_trigger": false},
+  {"query": "just implement the checkout flow, don't bother with a plan", "should_trigger": false},
+  {"query": "audit our payments code for security gaps before we ship", "should_trigger": false},
+  {"query": "what's a good branching strategy for a team of 5", "should_trigger": false},
+  {"query": "write the PRD for CSV export", "should_trigger": false}
+]

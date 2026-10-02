@@ -1,0 +1,16 @@
+[
+  {"query": "write a spec for the checkout flow — given/when/then for every case, not just happy path", "should_trigger": true},
+  {"query": "we have docs/prd-referral-program.md approved, now write the behavior spec so eng can start", "should_trigger": true},
+  {"query": "I want spec-driven development for the new webhook retry logic — lock down the API contract before anyone writes code", "should_trigger": true},
+  {"query": "spec out the password reset flow: what happens on expired token, wrong email, rate limited requests", "should_trigger": true},
+  {"query": "define the acceptance checklist and API shape for the CSV export feature before implementation starts", "should_trigger": true},
+  {"query": "can u write the behavior contract for the notifications settings page, need given/when/then for the edge cases too", "should_trigger": true},
+  {"query": "the loyalty points PRD is done, now I need the given/when/then spec locked down before implementation-plan runs", "should_trigger": true},
+  {"query": "write the PRD for the loyalty points feature", "should_trigger": false},
+  {"query": "break the approved spec for checkout into a step-by-step build sequence", "should_trigger": false},
+  {"query": "give me a UI brief with component states for the checkout screen", "should_trigger": false},
+  {"query": "write playwright tests for checkout given the spec at docs/spec-checkout.md", "should_trigger": false},
+  {"query": "the checkout code doesn't match the spec anymore, why is it failing in prod", "should_trigger": false},
+  {"query": "what's the difference between a PRD and a spec", "should_trigger": false},
+  {"query": "review our API for security issues before we ship checkout", "should_trigger": false}
+]

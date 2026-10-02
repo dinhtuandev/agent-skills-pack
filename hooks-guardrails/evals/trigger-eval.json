@@ -1,0 +1,14 @@
+[
+  {"query": "set up Claude Code hooks so lint and typecheck run automatically after every edit", "should_trigger": true},
+  {"query": "I want a guardrail that blocks Claude from touching .env or migration files", "should_trigger": true},
+  {"query": "run our test suite automatically before every Claude Code session ends", "should_trigger": true},
+  {"query": "can u wire up a notification hook so I get pinged when Claude needs my input", "should_trigger": true},
+  {"query": "set up PreToolUse hooks to protect prod config from being edited", "should_trigger": true},
+  {"query": "I keep having to tell Claude the same rules every session, can we automate that with hooks", "should_trigger": true},
+  {"query": "set up a git pre-commit hook that runs lint with husky", "should_trigger": false},
+  {"query": "commit these changes properly", "should_trigger": false},
+  {"query": "plan mode: I want guardrails before this risky migration, don't touch anything yet", "should_trigger": false},
+  {"query": "what are hooks in React and when should I use useEffect", "should_trigger": false},
+  {"query": "audit our code for security issues", "should_trigger": false},
+  {"query": "write the spec for our notification system", "should_trigger": false}
+]

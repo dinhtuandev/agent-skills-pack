@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "service-name": {
+      "command": "npx",
+      "args": ["-y", "@scope/service-mcp-server"],
+      "env": {
+        "SERVICE_API_KEY": "${SERVICE_API_KEY}"
+      }
+    }
+  }
+}
